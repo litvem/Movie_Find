@@ -19,19 +19,18 @@ const App = () => {
         const response = await fetch(`${API_URL}&s=${title}`);
         // Get the data from the response
         const data = await response.json();
-
         setMovies(data.Search);
     }
 
     // Load data from DB as the page loads
     useEffect(() => {
-        searchMovies('Spiderman');
+        searchMovies('Frozen');
     }, []);
-
+    // Render page
     return (
         <div className='app'>
             <h1>MovieFind</h1>
-
+            
             <div className='searchBar'>
                 <input 
                     placeholder="Search for movies"
@@ -40,7 +39,7 @@ const App = () => {
                 />
                 <img 
                     src={SearchIcon}
-                    alt="search"
+                    alt='search'
                     onClick={() => searchMovies(searchTerm)}
                 />
             </div>
