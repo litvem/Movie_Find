@@ -1,11 +1,10 @@
-import './App.css';
+import React from 'react';
 
-const App = ()=> {
-  return (
-    <div className="App">
-      <h1>Hello, React!</h1>
-    </div>
-  );
+// MAin functional component
+const App = () => {
+    return (
+        <h1>App</h1>
+    );
 }
 
 export default App;
