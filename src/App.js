@@ -9,7 +9,10 @@ const API_URL = 'http://www.omdbapi.com?apikey=ba604c3a';
 
 // Main functional component
 const App = () => {
+    // Add state with empty array of movies
     const [movies, setMovies] = useState([]);
+    // Add state with empty search terms
+    const [searchTerm, setSearchTerm] = useState('');
 
     // Asynchronous function that requires time to load the movies that will search for movies based om given title
     const searchMovies = async (title) => {
@@ -32,13 +35,13 @@ const App = () => {
             <div className='searchBar'>
                 <input 
                     placeholder="Search for movies"
-                    value="Spiderman"
-                    onChange={() => {}}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <img 
                     src={SearchIcon}
                     alt="search"
-                    onClick={() => {}}
+                    onClick={() => searchMovies(searchTerm)}
                 />
             </div>
 
